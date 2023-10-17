@@ -1,0 +1,14 @@
+**/.DS_Store
+.idea/
+log/
+logs/
+**/logs/
+/target/
+**/target/
+.classpath
+.project
+.settings
+*.log
+*.iml
+.fib/
+.fib/*
