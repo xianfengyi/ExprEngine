@@ -9,21 +9,6 @@ import java.util.List;
  * @Date 2022/10/7 12:44 PM
  */
 public abstract class Node {
-
-    /**
-     * the class
-     */
-    private Class<?> clazz;
-
-    /**
-     * the constructor
-     *
-     * @param clazz
-     */
-    public Node(Class<?> clazz) {
-        this.clazz = clazz;
-    }
-
     /**
      * the children instance
      *
