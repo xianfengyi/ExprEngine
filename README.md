@@ -29,6 +29,43 @@ String res = (String) executor.execute(expr, parameters);
 // result is '及格'
 ```
 
+Maybe, you param is complex type such as class type, in this case,you can:
+```java
+public class User{
+    private String name;
+    private int age;
+
+    public User(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+}
+
+String expr = "case when $$user.age>60 then '老人' when $$user.age>20 then '成年' ELSE '青年' END";
+Map<String, Object> parameters = new HashMap<>();
+User user = new User("pioneeryi",30);
+parameters.put("user", user);
+String res = (String) executor.execute(expr, parameters);
+
+// result is '成年'
+```
+
 # Operators support
 * Arithmetic: + - * /
 * Comparators: > >= < <= == !=
